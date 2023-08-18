@@ -1,4 +1,0 @@
-#Thu Aug 17 10:02:05 ECT 2023
-base.0=/Users/dev/Documents/develops/identidroid/identidroid/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
