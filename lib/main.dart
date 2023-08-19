@@ -37,6 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   static Future<String?> mac() async {
     try {
       String? mac = await PlatformDeviceId.getDeviceId;
+      print(mac);
       return mac;
     } on PlatformException {
       return 'Failed to get Device MAC Address.';
@@ -44,17 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   @override
-  initState() {
-    super.initState();
-    mac().then((value) => deviceID = value);
-  }
-
-  @override
   Widget build(BuildContext context) {
-    setState(() {
-      mac().then((value) => deviceID = value);
-      print(deviceID);
-    });
     return Scaffold(
       body: Center(
         child: Column(
@@ -112,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           const Padding(
                             padding: EdgeInsets.only(top: 16),
-                            child: Text('Error, reinicie la app',
+                            child: Text('Error, Vuelva a intentarlo',
                                 style: TextStyle(
                                     fontSize: 30, color: Colors.black)),
                           )
@@ -142,6 +133,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                   ),
                 ),
+                TextButton(
+                  onPressed: () {
+                    setState(() {});
+                  },
+                  child:
+                      const Text('Actualizar', style: TextStyle(fontSize: 50)),
+                )
               ],
             ),
           ],
